@@ -11,14 +11,48 @@ import android.widget.CompoundButton;
 
 public class MainActivity extends AppCompatActivity {
 
+    boolean topCosmicChecked;
+    boolean jungleCosmicChecked;
     boolean midCosmicChecked;
+    boolean supportCosmicChecked;
+    boolean botCosmicChecked;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        CheckBox topCheckbox = (CheckBox) findViewById(R.id.TopCosmicCheckbox);
+        CheckBox jungleCheckbox = (CheckBox) findViewById(R.id.JungleCosmicCheckbox);
         CheckBox midCheckbox = (CheckBox) findViewById(R.id.MidCosmicCheckbox);
+        CheckBox supportCheckbox = (CheckBox) findViewById(R.id.SupportCosmicCheckbox);
+        final CheckBox botCheckBox = (CheckBox) findViewById(R.id.BotCosmicCheckbox);
+
         Button startBtn = (Button) findViewById(R.id.startBtn);
+
+        topCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    topCosmicChecked = true;
+                }
+                else {
+                    topCosmicChecked = false;
+                }
+            }
+        });
+
+        jungleCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    jungleCosmicChecked = true;
+                }
+                else {
+                    jungleCosmicChecked = false;
+                }
+            }
+        });
 
         midCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -28,6 +62,30 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
                     midCosmicChecked = false;
+                }
+            }
+        });
+
+        supportCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    supportCosmicChecked = true;
+                }
+                else {
+                    supportCosmicChecked = false;
+                }
+            }
+        });
+
+        botCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    botCosmicChecked = true;
+                }
+                else {
+                    botCosmicChecked = false;
                 }
             }
         });
